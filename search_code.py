@@ -68,6 +68,13 @@ class SearchCodeClient(object):
         self.poll()
         return [item['name'] for item in self._repository_data]
 
+    def __iter__(self):
+        self.poll()
+        return iter(self._repository_data)
+
+    def __getitem__(self, item):
+        return list(self)[item] 
+    
     def __len__(self):
         return len(self.repository_names())
 
