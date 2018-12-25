@@ -256,7 +256,7 @@ def generate_gitlab_projects_info(gitlab_server, repository_names, queue):
 
     for item in all_projects:
         reponame = item.path_with_namespace
-        repourl = 'git@git.weidai.work:' + reponame + ".git"
+        repourl = 'git@git.*.work:' + reponame + ".git"
         default_branch = item.default_branch
 
         group = reponame.split('/')[0]
